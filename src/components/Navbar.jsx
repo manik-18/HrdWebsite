@@ -13,7 +13,7 @@ function Navbar() {
     <nav className="bg-white  sticky w-full z-20 top-0 left-0 border-b border-gray-200 ">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo and Site Title */}
-        <Link to="home" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img src={Logo} className="h-8 mr-3" alt="Hrd Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap ">
             HRD Department
