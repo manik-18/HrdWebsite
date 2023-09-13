@@ -30,6 +30,7 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
+                    autoComplete="email"
                     className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
                     placeholder="name@flowbite.com"
                     required
@@ -45,6 +46,7 @@ const Contact = () => {
                   <input
                     type="text"
                     id="subject"
+                    autoComplete="subject"
                     className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
                     placeholder="Let us know how we can help you"
                     required
@@ -59,6 +61,7 @@ const Contact = () => {
                   </label>
                   <textarea
                     id="message"
+                    autoComplete="message"
                     rows="6"
                     className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
                     placeholder="Leave a comment..."
