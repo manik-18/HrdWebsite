@@ -1,16 +1,36 @@
 import React from "react";
 import Campus from "../assets/campus.jpg";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 
 const Banner = () => {
   return (
     <div>
       <section className="bg-white">
         <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+        <Carousel autoPlay={true} interval={3000} infiniteLoop={true} showThumbs={false} showArrows={false}>
           <img
             className="object-cover h-full"
             src={Campus}
             alt="dashboard image"
           />
+          <img
+            className="object-cover h-full"
+            src={Campus}
+            alt="dashboard image"
+          />
+          <img
+            className="object-cover h-full"
+            src={Campus}
+            alt="dashboard image"
+          />
+          <img
+            className="object-cover h-full"
+            src={Campus}
+            alt="dashboard image"
+          />
+          </Carousel>
           <div className="mt-4 md:mt-0">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.

@@ -1,8 +1,18 @@
 import React from "react";
 import Call from "../assets/call.png";
 import Mail from "../assets/mail.png";
+import Location from "../assets/location.png";
+import ExtLink from "../assets/extLink.svg";
 
 const Contact = () => {
+  // Function to open Google Maps with the address
+  const openGoogleMaps = () => {
+    const address =
+      "Outer Ring Rd, near Marathalli, Kaverappa Layout, Kadubeesanahalli, Kadabeesanahalli, Bengaluru, Karnataka 560103";
+    const url = "https://maps.app.goo.gl/opX6EjuxG2hLniFw6";
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="bg-gray-100 min-h-screen p-4">
       <div className="container mx-auto mt-8">
@@ -16,55 +26,56 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <div className="bg-white p-6 rounded-lg shadow-md h-full">
-              <h2 className="mt-4 mb-12 text-xl font-semibold text-gray-900">
-                Lorem ipsum dolor sit amet Lorem ipsum
+              <h2 className=" mb-12 text-xl font-semibold text-gray-900">
+                Contact Form
               </h2>
               <form action="#" className="space-y-8">
                 <div>
                   <label
-                    htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-gray-900"
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700"
                   >
-                    Your email
+                    Name
                   </label>
                   <input
-                    type="email"
-                    id="email"
-                    autoComplete="email"
-                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
-                    placeholder="name@flowbite.com"
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="mt-1 p-2 w-full border-gray-300 rounded-md"
+                    placeholder="Your name"
                     required
                   />
                 </div>
                 <div>
                   <label
-                    htmlFor="subject"
-                    className="block mb-2 text-sm font-medium text-gray-900"
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700"
                   >
-                    Subject
+                    Email
                   </label>
                   <input
-                    type="text"
-                    id="subject"
-                    autoComplete="subject"
-                    className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
-                    placeholder="Let us know how we can help you"
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="mt-1 p-2 w-full border-gray-300 rounded-md"
+                    placeholder="Your email"
                     required
                   />
                 </div>
-                <div className="sm:col-span-2">
+                <div>
                   <label
                     htmlFor="message"
-                    className="block mb-2 text-sm font-medium text-gray-900"
+                    className="block text-sm font-medium text-gray-700"
                   >
-                    Your message
+                    Message
                   </label>
                   <textarea
                     id="message"
-                    autoComplete="message"
-                    rows="6"
-                    className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
-                    placeholder="Leave a comment..."
+                    name="message"
+                    rows="4"
+                    className="mt-1 p-2 w-full border-gray-300 rounded-md"
+                    placeholder="Your message"
+                    required
                   ></textarea>
                 </div>
                 <button
@@ -81,27 +92,41 @@ const Contact = () => {
               <h2 className="text-xl font-semibold mb-4">Email Address</h2>
               <div className="flex items-center space-x-2">
                 <img src={Mail} alt="Email Icon" className="w-6 h-6" />
-                <span>Email: example@example.com</span>
+                <span>
+                  <b>Email:</b> example@example.com
+                </span>
               </div>
             </div>
             <div className="bg-white p-6 mt-4 rounded-lg shadow-md">
               <h2 className="text-xl font-semibold mb-4">Phone Number</h2>
               <div className="flex items-center space-x-2">
                 <img src={Call} alt="Phone Icon" className="w-6 h-6" />
-                <span>Phone: +1 123-456-7890</span>
+                <span>
+                  <b>Phone:</b> +1 123-456-7890
+                </span>
               </div>
             </div>
             <div className="bg-white p-6 mt-4 rounded-lg shadow-md">
               <h2 className="text-xl font-semibold mb-4">Location</h2>
-              <iframe
-                title="Google Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5950369259353!2d77.68750726908843!3d12.933729287838798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13cb00000001%3A0xab10e26281718cc2!2sNew%20Horizon%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1694539665383!5m2!1sen!2sin"
-                width="100%"
-                height="300"
-                frameBorder="0"
-                allowFullScreen=""
-                aria-hidden="false"
-              ></iframe>
+              <div className="flex items-start space-x-2">
+                <img
+                  src={Location}
+                  alt="Address Icon"
+                  className="w-6 h-6 mt-1"
+                />
+                <span>
+                  <b>Address:</b> Outer Ring Rd, near Marathalli, Kaverappa
+                  Layout, Kadubeesanahalli, Kadabeesanahalli, Bengaluru,
+                  Karnataka 560103
+                </span>
+                <button
+                  onClick={openGoogleMaps}
+                  className="ml-4"
+                  title="Open in Google Maps"
+                >
+                  <img src={ExtLink} alt="link" className="h-12" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
